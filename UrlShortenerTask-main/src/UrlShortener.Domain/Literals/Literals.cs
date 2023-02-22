@@ -4,6 +4,6 @@ public static class Literals
 {
     public static class ApplicationSetupConstants
     {
-        public const string ServiceUrl = "http://localhost:5167/";
+        public const string ServiceUrl = "https://quicklink.com/";
     }
 }
