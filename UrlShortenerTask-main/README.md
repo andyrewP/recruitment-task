@@ -3,7 +3,7 @@ This is a web application to shorten URLs. It provides the functionality for cre
 
 ## Technologies Used
 
-* ASP.NET Core
+* ASP.NET Core MVC
 * FluentValidation
 * X.PagedList
 * Entity Framework in-memory DB
