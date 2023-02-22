@@ -25,7 +25,7 @@ run the following command to start the application:
 That's it! You can now use the application.
 
 ## Usage
-1. Navigate to `Url Shortener` page.
+1. Navigate to `Url Shortener` page in the nav bar.
 2. The page will display a list of previously added short urls (blank during inital startup)
 3. Click on the `Create New Shorted URL` button.
 4. Paste or type a valid URL you want to shorten.
