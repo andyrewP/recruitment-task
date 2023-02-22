@@ -32,7 +32,7 @@ That's it! You can now use the application.
 5. You may optionally provide your own unique alias for the url.
 6. The shortened URL will be displayed in a table. You can copy the URL to your clipboard by clicking the "Copy" button.
 
-Paste the shortened URL wherever you want to use it. 
+You click on one of the shorted URLs to verify whether proper redirection works.
 
 ## Notes
 This application uses client-side validation and FluentValidation to validate incoming requests. If a request fails validation, the user will be redirected to the Create page with an error message.
