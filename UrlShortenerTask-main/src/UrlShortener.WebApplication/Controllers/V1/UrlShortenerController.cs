@@ -44,7 +44,7 @@ public class UrlShortenerController : BaseApiController<CreateShortUrlRequest>
     /// Default view
     /// </summary>
     /// <returns>Return default view from Create</returns>
-    public async Task<IActionResult> Create()
+    public IActionResult Create()
     {
         return View(new CreateShortUrlRequest());
     }
@@ -73,7 +73,8 @@ public class UrlShortenerController : BaseApiController<CreateShortUrlRequest>
 
             if (!validationResponse.IsValid)
             {
-                var errorMessages = string.Join(" ", validationResponse.Errors.Select(e => e.ErrorMessage));
+                var errorMessages = 
+                    string.Join(" ", validationResponse.Errors.Select(e => e.ErrorMessage));
 
                 Logger.LogError(
                     $"Validation error in {nameof(Create)} -> " +
