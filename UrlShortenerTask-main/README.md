@@ -1,46 +1,42 @@
-# UrlShortener
+## Url Shortener WebApplication
+This is a web application to shorten URLs. It provides the functionality for creating and displaying the history of created short URLs.
 
-Provide some details about your application 
+## Technologies Used
 
-## How to start?
-`Section description:  What should be done before application start(e.g db migration)`
-## Key assumptions 
-`Section description: If you have any assumption during your implementation, please provide them here.`
-
-## Future Ideas
-`Section description:  If you haven't enough time to implement some feature or ideas, please provide them here.`
+* ASP.NET Core
+* FluentValidation
+* X.PagedList
+* Entity Framework in-memory DB
+* XUnit
 
 
-## Task Description 
->Build a URL shortening service like TinyURL. This service will provide short aliases redirecting to long URLs.
-### Why do we use Url shortening?
-URL shortening is used to create shorter aliases for long URLs. We call these shortened aliases “short links.” Users are redirected to the original URL when they hit these short links. Short links save a lot of space when displayed, printed, messaged, or tweeted. Additionally, users are less likely to mistype shorter URLs.
+## Getting Started
+To get started with this application, follow these steps:
 
-For example, if we shorten the following URL: `https://www.some-website.io/realy/long-url-with-some-random-string/m2ygV4E81AR`
+1. Clone this repository to your local machine.
+2. Make sure you have .NET Core installed on your machine.
+3. Open the project in your favorite code editor.
+4. Run the following command in the terminal or command prompt at the root of the project to restore the necessary packages:
+```dotnet restore```
+5. After the packages have been restored, navigate to `recruitment-task\UrlShortenerTask-main\src\UrlShortener.WebApplication` catalog and 
+run the following command to start the application:
+```dotnet run```
+6. Open a web browser and go to the port specified in your console window. You should see the home page of the application.
+That's it! You can now use the application.
 
-We would get something like this: `https://short.url/xer23`
+## Usage
+1. Navigate to `Url Shortener` page.
+2. The page will display a list of previously added short urls (blank during inital startup)
+3. Click on the `Create New Shorted URL` button.
+4. Paste or type a valid URL you want to shorten.
+5. You may optionally provide your own unique alias for the url.
+6. The shortened URL will be displayed in a table. You can copy the URL to your clipboard by clicking the "Copy" button.
 
-URL shortening is used to optimize links across devices, track individual links to analyze audience, measure ad campaigns’ performance, or hide affiliated original URLs.
+Paste the shortened URL wherever you want to use it. 
 
-### URL shortening application should have:
- - A page where a new URL can be entered and a shortened link is generated. You can use Home page.
- - A page that will show a list of all the shortened URL’s.
-### Functional Requirements:
-- Given a URL, our service should generate a shorter and unique alias of it. This is called a short link. This link should be short enough to be easily copied and pasted into applications.
-- When users access a short link, our service should redirect them to the original link.
-- Application should store logs information about requests.
-### Non-Functional Requirements:
-- URL redirection should happen in real-time with minimal latency.
-- Please add small project description to Readme.md file.
-### During implementation please pay attention to:
-- Application is runnable out of box. If some setup is needed please provide details on ReadMe file.
-- Project structure and code smells.
-- Design Principles and application testability.
-- Main focus should be on backend functionality, not UI.
-- Input parameter validation.
-- Please, don't use any library or service that implements the core functionality of this test.
-### Other recommendation:
-- You may change UI technology to any other you are most familiar with.
-- You can use InMemory data storage.
-- You can use the Internet.
-# May the force be with you {username}!
+## Notes
+This application uses client-side validation and FluentValidation to validate incoming requests. If a request fails validation, the user will be redirected to the Create page with an error message.
+
+Pagination is implemented using X.PagedList. By default, 3 items will be shown per page.
+
+If an error occurs, the user will be redirected to the Home page with an error message.
