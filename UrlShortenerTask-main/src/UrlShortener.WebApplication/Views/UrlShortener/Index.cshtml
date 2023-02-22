@@ -1,0 +1,40 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<UrlShortener.Domain.Models.ShortUrl> 
+
+<div class="col-6 text-right">
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Create New Shorted URL
+    </a>
+</div>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Shorted URL</th>
+            <th>Short Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var shortUrl in Model)
+        {
+            <tr>
+                <tr>
+                    <td>
+                        <a href="@shortUrl.LongUrl">@shortUrl.ShortedUrl</a>
+                    </td>
+                    <td>@Html.DisplayFor(m => shortUrl.Alias)</td>
+                </tr>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+}
+else
+{
+    <div class="container">
+        <p>No shortened URLs found.</p>
+    </div>
+}
